@@ -44,7 +44,7 @@ const Demos = () => {
      alt='resume example'
       width={220} 
       height={300}/>
-            <h1 className='ml-2 text-gray-400 italic font-bold'>temp</h1>
+            <h1 className='ml-2 text-gray-400 italic font-bold'>temp 4</h1>
     </div>
   </div>
   )
