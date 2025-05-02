@@ -11,6 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-logo: hinge 15s alternate  2s ease-in-out infinite ;
+  --animate-button_hinge: hingeButton 15s alternate  2s ease-in-out infinite ;
 
   @keyframes hinge {
     10% {
@@ -38,12 +39,21 @@
       
     
     }
+    @keyframes hingeButton {
+    transform: scale(4)
+          
+        
+      
+      }
 
 }
 
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #6f6969;
+    --background: #b4b2b2;
     --foreground: #000000;
   }
 }
