@@ -27,7 +27,7 @@ const Demos = () => {
     alt='resume example' 
     width={220} 
     height={300}/>
-          <h1 className='mx-2 text-gray-400 italic font-bold'>temp 2</h1>
+          <h1 className='mx-2 text-gray-400 italic font-bold'>layout 2</h1>
     </div>
 
     <div className="w-[400px] hover:flex-col hover:scale-105 transition-all duration-150 rounded-2xl border-2 border-dotted border-gray-300 flex justify-center items-center shadow-2xl hover:border-4 hover:border-double hover:bg-gray-600 h-[400px] bg-gray-700 m-6 max-md:w-[320px]">
@@ -36,7 +36,7 @@ const Demos = () => {
     alt='resume example' 
     width={220} 
     height={300}/>
-          <h1 className='mx-2 text-gray-400 italic font-bold'>temp 3</h1>
+          <h1 className='mx-2 text-gray-400 italic font-bold'>layout 3</h1>
     </div> 
     <div className="w-[400px] hover:flex-col   hover:scale-105 transition-all duration-150 rounded-2xl border-2 border-dotted border-gray-300 flex justify-center items-center shadow-2xl  hover:border-4 hover:border-double hover:bg-gray-600 h-[400px] bg-gray-700 m-6 max-md:w-[320px]">
     <Image  className='rounded-xl border-2 border-dotted border-gray-300 '
@@ -44,7 +44,7 @@ const Demos = () => {
      alt='resume example'
       width={220} 
       height={300}/>
-            <h1 className='mx-2 hover:m-10 text-gray-400 italic font-bold'>temp 4</h1>
+            <h1 className='mx-2 hover:m-10 text-gray-400 italic font-bold'>layout 4</h1>
     </div>
   </div>
   )
