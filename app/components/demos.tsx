@@ -18,7 +18,7 @@ const Demos = () => {
       alt='resume example' 
       width={220} 
       height={300}/>
-      <h1 className='mx-2 text-gray-400 italic font-bold'>temp 1</h1>
+      <h1 className='mx-2 text-gray-400 italic font-bold'>layout 1</h1>
     </div>
 
     <div className="w-[400px] hover:flex-col hover:scale-105 transition-all duration-150 rounded-2xl border-2 border-dotted border-gray-300 flex justify-center items-center shadow-2xl hover:border-4 hover:border-double hover:bg-gray-600 h-[400px] bg-gray-700 m-6 max-md:w-[320px]">

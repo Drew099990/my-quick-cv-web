@@ -9,19 +9,35 @@ import Link from "next/link";
 export default function Home() {
   const [temp,setTemp] = useState("")
   const [show, setShow] = useState(false);
-  const[university,setUniversity] = useState("")
+  // const[university,setUniversity] = useState("")
   const[gradutionyear,setGraduationyear] = useState("")
   const[Highschool,setHighschool] = useState("")
   const[completionyear,setCompletionyear] = useState("")
   const [activeSection, setActiveSection] = useState("contact");
-  const [contact,setContact] = useState("")
-  const [education,setEducation] = useState("")
-  const [work,setWork] = useState("")
-  const [skills,setSkills] = useState("")
-  const [reference,setReference] = useState("")
-  const [summary,setSummary] = useState("")
-  
-
+  const [fullName, setFullName] = useState("");
+  const [location, setLocation] = useState("");
+  const [email, setEmail] = useState("");
+  const [university, setUniversity] = useState("");
+  const [yearOfGraduation, setYearOfGraduation] = useState("");
+  const [highSchool, setHighSchool] = useState("");
+  const [yearOfCompletion, setYearOfCompletion] = useState("");
+  const [companyNameOne, setCompanyNameOne] = useState("");
+  const [achievementOne, setAchievementOne] = useState("");
+  const [achievementTwo, setAchievementTwo] = useState("");
+  const [achievementThree, setAchievementThree] = useState("");
+  const [companyNameTwo, setCompanyNameTwo] = useState("");
+  const [achievementFour, setAchievementFour] = useState("");
+  const [achievementFive, setAchievementFive] = useState("");
+  const [achievementSix, setAchievementSix] = useState("");
+  const [skillOne, setSkillOne] = useState("");
+  const [skillTwo, setSkillTwo] = useState("");
+  const [skillThree, setSkillThree] = useState("");
+  const [skillFour, setSkillFour] = useState("");
+  const [skillFive, setSkillFive] = useState("");
+  const [skillSix, setSkillSix] = useState("");
+  const [referenceOne, setReferenceOne] = useState("");
+  const [referenceTwo, setReferenceTwo] = useState("");
+  const [professionalSummary, setProfessionalSummary] = useState("");
   const showModal = () => {
     setShow((prevShow) => !prevShow);
   };
@@ -32,118 +48,108 @@ export default function Home() {
 
   
 
-    const handleContactChange = (e:any) => {
-      setContact(e.target.value);
-    };
-  
-    const handleContactSave = (field:string) => {
-      switch (field) {
-        case "full name":
-          localStorage.setItem("full name", JSON.stringify(contact));
-          break;
+  const handleStorage = (field: string, value: string) => {
+    switch (field) {
+        case "fullName":
+            setFullName(value);
+            localStorage.setItem("fullName", JSON.stringify(value));
+            break;
         case "location":
-          localStorage.setItem("", JSON.stringify(contact));
-          break;
+            setLocation(value);
+            localStorage.setItem("location", JSON.stringify(value));
+            break;
         case "email":
-          localStorage.setItem("email", JSON.stringify(contact));
-          break;
+            setEmail(value);
+            localStorage.setItem("email", JSON.stringify(value));
+            break;
+        case "university":
+            setUniversity(value);
+            localStorage.setItem("university", JSON.stringify(value));
+            break;
+        case "yearOfGraduation":
+            setYearOfGraduation(value);
+            localStorage.setItem("yearOfGraduation", JSON.stringify(value));
+            break;
+        case "highSchool":
+            setHighSchool(value);
+            localStorage.setItem("highSchool", JSON.stringify(value));
+            break;
+        case "yearOfCompletion":
+            setYearOfCompletion(value);
+            localStorage.setItem("yearOfCompletion", JSON.stringify(value));
+            break;
+        case "companyNameOne":
+            setCompanyNameOne(value);
+            localStorage.setItem("companyNameOne", JSON.stringify(value));
+            break;
+        case "achievementOne":
+            setAchievementOne(value);
+            localStorage.setItem("achievementOne", JSON.stringify(value));
+            break;
+        case "achievementTwo":
+            setAchievementTwo(value);
+            localStorage.setItem("achievementTwo", JSON.stringify(value));
+            break;
+        case "achievementThree":
+            setAchievementThree(value);
+            localStorage.setItem("achievementThree", JSON.stringify(value));
+            break;
+        case "companyNameTwo":
+            setCompanyNameTwo(value);
+            localStorage.setItem("companyNameTwo", JSON.stringify(value));
+            break;
+        case "achievementFour":
+            setAchievementFour(value);
+            localStorage.setItem("achievementFour", JSON.stringify(value));
+            break;
+        case "achievementFive":
+            setAchievementFive(value);
+            localStorage.setItem("achievementFive", JSON.stringify(value));
+            break;
+        case "achievementSix":
+            setAchievementSix(value);
+            localStorage.setItem("achievementSix", JSON.stringify(value));
+            break;
+        case "skillOne":
+            setSkillOne(value);
+            localStorage.setItem("skillOne", JSON.stringify(value));
+            break;
+        case "skillTwo":
+            setSkillTwo(value);
+            localStorage.setItem("skillTwo", JSON.stringify(value));
+            break;
+        case "skillThree":
+            setSkillThree(value);
+            localStorage.setItem("skillThree", JSON.stringify(value));
+            break;
+        case "skillFour":
+            setSkillFour(value);
+            localStorage.setItem("skillFour", JSON.stringify(value));
+            break;
+        case "skillFive":
+            setSkillFive(value);
+            localStorage.setItem("skillFive", JSON.stringify(value));
+            break;
+        case "skillSix":
+            setSkillSix(value);
+            localStorage.setItem("skillSix", JSON.stringify(value));
+            break;
+        case "referenceOne":
+            setReferenceOne(value);
+            localStorage.setItem("referenceOne", JSON.stringify(value));
+            break;
+        case "referenceTwo":
+            setReferenceTwo(value);
+            localStorage.setItem("referenceTwo", JSON.stringify(value));
+            break;
+        case "professionalSummary":
+            setProfessionalSummary(value);
+            localStorage.setItem("professionalSummary", JSON.stringify(value));
+            break;
         default:
-          break;
-      }
-    };
-const handleEducationChange = (e:any) => {
-  setEducation(e.target.value)
-}
-
-  const handleEducationSave = (feild:string)=>{
-
-    if (feild === "University"){
-    localStorage.setItem("university",JSON.stringify(education));
+            break;
     }
-    else if (feild === "Year Of Graduation"){
-      localStorage.setItem("year of graduation",JSON.stringify(education));
-    }
-    else if (feild === "High school"){
-      localStorage.setItem("high school",JSON.stringify(education));
-    }
-    else if( feild === "Year Of Completion"){
-      localStorage.setItem("year of completion",JSON.stringify(education));
-    }
-    else{
-    //
-    }
-  };
-
-  const handleWorkSave = (feild:string)=>{
-
-    switch(feild){
-      case "Company name #1": localStorage.setItem("company1",JSON.stringify(work));
-        break;
-      case "1": localStorage.setItem("achie1",JSON.stringify(work));
-      break;
-      case "2": localStorage.setItem("achie2",JSON.stringify(work));
-        break; 
-      case "3": localStorage.setItem("achie3",JSON.stringify(work));
-        break;
-      case "Company name #2": localStorage.setItem("company2",JSON.stringify(work))
-      break;
-      case "01": localStorage.setItem("achie01",JSON.stringify(work));
-        break;
-      case "02": localStorage.setItem("achie02",JSON.stringify(work));
-        break;
-      case "03": localStorage.setItem("achie03",JSON.stringify(work));
-        break;         
-    }
-  };
-
- const handleWorkChange = (e:any) =>{
-  setWork(e.target.value)
- }
-
-  const skills_page = (feild:string,value:string ,e:string)=>{
-
-    if (feild === ""){
-
-    }
-    else if (feild === ""){
-
-    }
-    else if (feild === ""){
-
-    }
-    else{
-     
-    }
-  };
-
-  const reference_page = (feild:string,value:string ,e:string)=>{
-
-    if (feild === ""){
-
-    }
-    else if (feild === ""){
-
-    }
-    else if (feild === ""){
-
-    }
-    else{
-     
-    }
-  };
-
-  const handleSummaryChange = (e:any)=>{
-   setSummary(e.target.value)
-  }
-
-  const handleSummarySave = (feild:string)=>{
-
-    if (feild === "summary"){
- localStorage.setItem("summary",JSON.stringify(summary))
-    }
-
-  };
-
+};
  
 
   return (
@@ -207,214 +213,259 @@ const handleEducationChange = (e:any) => {
             </button>
           </div>
           <div>
-
-            
-            {activeSection === 'contact' && <div><form className="p-5 pt-27 text-gray-700 flex flex-col justify-center items-center">
-        <label>
-            Full Name:
-          </label>
-          <input
-                  id="full name"
-                  value={contact}
-                  onChange={handleContactChange}
-                  onBlur={() => handleContactSave("full name")}
-                  placeholder='William M...'
-                  className="rounded-2xl px-5 bg-gray-400 w-100"
-                  type="text"
+    {activeSection === 'contact' && (
+        <div>
+            <form className="p-5 pt-27 text-gray-700 flex flex-col justify-center items-center">
+                <label>Full Name:</label>
+                <input
+                    id="fullName"
+                    value={fullName}
+                    onChange={(e) => handleStorage("fullName", e.target.value)}
+                    placeholder='William M...'
+                    className="rounded-2xl px-5 bg-gray-400 w-100"
+                    type="text"
                 />
-          <label>
-            Location:
-          </label>
-          <input 
-          id="location"
-          onChange={handleContactChange}
-                  onBlur={() => handleContactSave("location")}
-          placeholder='city,country' 
-          className="rounded-2xl px-5 bg-gray-400 w-100" type="text"></input>
-          
-          <label>
-            Email:
-          </label>
-          <input
-          id="email"
-          onChange={handleContactChange}
-                  onBlur={() => handleContactSave("email")}
-           placeholder='andrewmmuyunda777@gmail.com' 
-           className="rounded-2xl px-5 bg-gray-400 w-100" type="text"></input>
-          
-          <button onClick={()=>selector('education')} className='rounded border-dotted bottom-2 mt-5  border-gray-700 text-gray-800 underline'>next</button>
-          </form></div>}
-            {activeSection === 'education' &&  <div><form className="p-5 pt-27 text-gray-700 flex flex-col justify-center items-center">
-    <label>
-        University:
-      </label>
-      <input  value={education}
-       onChange={handleEducationChange}
-                  onBlur={() => handleEducationSave("University")}
-                   placeholder='havard university' className="px-5 bg-gray-400 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Year Of Graduation:
-      </label>
-      <input value={education}
-       onChange={handleEducationChange}
-                  onBlur={() => handleEducationSave("Year Of Graduation")}
-      placeholder='2017' 
-      className="bg-gray-400 rounded-2xl w-100 px-5" type="text"></input>
-      
-      <label>
-        High school:
-      </label>
-      <input value={education}
-       onChange={handleEducationChange}
-                  onBlur={() => handleEducationSave("High school")}
-      placeholder='mountainhill highschool' 
-      className="bg-gray-400 rounded-2xl w-100 px-5" type="text"></input>
-      <label>
-        Year Of Completion:
-      </label>
-      <input value={education}
-       onChange={handleEducationChange}
-                  onBlur={() => handleEducationSave("Year Of Completion")}
-      placeholder='2012' 
-      className="bg-gray-400 rounded-2xl w-100 px-5" type="text"></input>
-      
-      <button onClick={()=>selector('work')} className='rounded border-dotted bottom-2 mt-5  border-gray-700 text-gray-800 underline'>next</button>
-      </form></div>}
-            {activeSection === 'work' &&  <div><form className="p-5 pt-20 text-gray-700 rounded-2xl flex flex-col justify-center items-center">
-    <label>
-    Company Name #1:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("Company name #1")}
-      placeholder='google' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("1")}
-      placeholder='1' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("2")}
-      placeholder='2' 
-      className="bg-gray-400  px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("3")}
-      placeholder='3' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-
-      <label>
-    Company Name #2:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("Company name #2")}
-      placeholder='top' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("01")}
-      placeholder='1' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("02")}
-      placeholder='2' 
-      className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-      <label>
-        Achivements at work:
-      </label>
-      <input value={work}
-       onChange={handleWorkChange}
-                  onBlur={() => handleWorkSave("03")}
-      placeholder='3' 
-       className="bg-gray-400 px-5 rounded-2xl w-100" type="text"></input>
-      
-
-
-
-
-      <button onClick={()=>selector('skills')} className='rounded border-dotted bottom-2 mt-5  border-gray-700 rounded-2xl text-gray-800 rounded-2xl underline'>next</button>
-      </form></div>}
-            {activeSection === 'skills' && <div><form className="p-5 pt-27 text-gray-700 px-5 rounded-2xl  flex flex-col justify-center items-center">
-    <label>
-        Skill:
-      </label>
-      <input placeholder='1' className="bg-gray-400 rounded-2xl px-5  w-100" type="text"></input>
-      
-      <label>
-        Skill:
-      </label>
-      <input placeholder='2' className="bg-gray-400 rounded-2xl  px-5 w-100" type="text"></input>
-      
-      <label>
-        Skill:
-      </label>
-      <input placeholder='3' className="bg-gray-400 rounded-2xl  px-5 w-100" type="text"></input>
-      
-      <label>
-        Skill:
-      </label>
-      <input placeholder='4' className="bg-gray-400 rounded-2xl px-5 w-100" type="text"></input>
-      
-      <label>
-        Skill:
-      </label>
-      <input placeholder='5' className="bg-gray-400 rounded-2xl px-5 w-100" type="text"></input>
-      
-      
-      <button  onClick={()=>selector('reference')} className='rounded border-dotted bottom-2 mt-5  border-gray-700 rounded-2xl  text-gray-800 rounded-2xl  underline'>next</button>
-      </form></div>}
-            {activeSection === 'reference' && <div><form className="p-5 pt-27 text-gray-700 rounded-2xl  flex flex-col justify-center items-center">
-    <label>
-        reference:
-      </label>
-      <input placeholder='reference of past work' className="bg-gray-400 px-5 rounded-2xl  w-100" type="text"></input>
-      
-      <label>
-        reference:
-      </label>
-      <input placeholder='reference of past work' className="bg-gray-400 px-5 rounded-2xl  w-100" type="text"></input>
-      
-      <button onClick={()=>selector('summary')}  className='rounded border-dotted bottom-2 mt-5  border-gray-700 rounded-2xl  text-gray-800 rounded-2xl  underline'>next</button>
-      </form></div>}
-
-
-            {activeSection === 'summary' &&     <div><form className="p-5 pt-27 text-gray-700 rounded-2xl  flex flex-col justify-center items-center">
-        <label>
-            Summary</label>
-            
-            <input value={summary} onChange={handleSummaryChange} onBlur={()=>handleSummarySave("summary")} placeholder='your work summary,...' className="px-5 bg-gray-400 rounded-2xl  w-100" type="text"></input>
-         <Link href="temp" className="decoration-none">   <button  className='rounded border-dotted mt-5 bottom-2 border-gray-700 rounded-2xl text-gray-800 rounded-2xl underline'>generate cv now!</button>
-         </Link>
-            </form></div>}
-            
-          </div>
+                <label>Location:</label>
+                <input
+                    id="location"
+                    value={location}
+                    onChange={(e) => handleStorage("location", e.target.value)}
+                    placeholder='city, country'
+                    className="rounded-2xl px-5 bg-gray-400 w-100"
+                    type="text"
+                />
+                <label>Email:</label>
+                <input
+                    id="email"
+                    value={email}
+                    onChange={(e) => handleStorage("email", e.target.value)}
+                    placeholder='andrewmmuyunda777@gmail.com'
+                    className="rounded-2xl px-5 bg-gray-400 w-100"
+                    type="text"
+                />
+                <button onClick={() => selector('education')} className='rounded border-dotted bottom-2 mt-5 border-gray-700 text-gray-800 underline'>next</button>
+            </form>
+        </div>
+    )}
+    {activeSection === 'education' && (
+        <div>
+            <form className="p-5 pt-27 text-gray-700 flex flex-col justify-center items-center">
+                <label>University:</label>
+                <input
+                    id="university"
+                    value={university}
+                    onChange={(e) => handleStorage("university", e.target.value)}
+                    placeholder='Harvard University'
+                    className="px-5 bg-gray-400 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Year Of Graduation:</label>
+                <input
+                    id="yearOfGraduation"
+                    value={yearOfGraduation}
+                    onChange={(e) => handleStorage("yearOfGraduation", e.target.value)}
+                    placeholder='2017'
+                    className="bg-gray-400 rounded-2xl w-100 px-5"
+                    type="text"
+                />
+                <label>High School:</label>
+                <input
+                    id="highSchool"
+                    value={highSchool}
+                    onChange={(e) => handleStorage("highSchool", e.target.value)}
+                    placeholder='Mountainhill High School'
+                    className="bg-gray-400 rounded-2xl w-100 px-5"
+                    type="text"
+                />
+                <label>Year Of Completion:</label>
+                <input
+                    id="yearOfCompletion"
+                    value={yearOfCompletion}
+                    onChange={(e) => handleStorage("yearOfCompletion", e.target.value)}
+                    placeholder='2012'
+                    className="bg-gray-400 rounded-2xl w-100 px-5"
+                    type="text"
+                />
+                <button onClick={() => selector('work')} className='rounded border-dotted bottom-2 mt-5 border-gray-700 text-gray-800 underline'>next</button>
+            </form>
+        </div>
+    )}
+    {activeSection === 'work' && (
+        <div>
+            <form className="p-5 pt-20 text-gray-700 rounded-2xl flex flex-col justify-center items-center">
+                <label>Company Name #1:</label>
+                <input
+                    id="companyNameOne"
+                    value={companyNameOne}
+                    onChange={(e) => handleStorage("companyNameOne", e.target.value)}
+                    placeholder='Google'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementOne"
+                    value={achievementOne}
+                    onChange={(e) => handleStorage("achievementOne", e.target.value)}
+                    placeholder='Achievement 1'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementTwo"
+                    value={achievementTwo}
+                    onChange={(e) => handleStorage("achievementTwo", e.target.value)}
+                    placeholder='Achievement 2'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementThree"
+                    value={achievementThree}
+                    onChange={(e) => handleStorage("achievementThree", e.target.value)}
+                    placeholder='Achievement 3'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Company Name #2:</label>
+                <input
+                    id="companyNameTwo"
+                    value={companyNameTwo}
+                    onChange={(e) => handleStorage("companyNameTwo", e.target.value)}
+                    placeholder='Top Company'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementFour"
+                    value={achievementFour}
+                    onChange={(e) => handleStorage("achievementFour", e.target.value)}
+                    placeholder='Achievement 1'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementFive"
+                    value={achievementFive}
+                    onChange={(e) => handleStorage("achievementFive", e.target.value)}
+                    placeholder='Achievement 2'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Achievements at work:</label>
+                <input
+                    id="achievementSix"
+                    value={achievementSix}
+                    onChange={(e) => handleStorage("achievementSix", e.target.value)}
+                    placeholder='Achievement 3'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <button onClick={() => selector('skills')} className='rounded border-dotted bottom-2 mt-5 border-gray-700 rounded-2xl text-gray-800 underline'>next</button>
+            </form>
+        </div>
+    )}
+    {activeSection === 'skills' && (
+        <div>
+            <form className="p-5 pt-27 text-gray-700 px-5 rounded-2xl flex flex-col justify-center items-center">
+                <label>Skill:</label>
+                <input
+                    id="skillOne"
+                    onChange={(e) => handleStorage("skillOne", e.target.value)}
+                    placeholder='Skill 1'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <label>Skill:</label>
+                <input
+                    id="skillTwo"
+                    onChange={(e) => handleStorage("skillTwo", e.target.value)}
+                    placeholder='Skill 2'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <label>Skill:</label>
+                <input
+                    id="skillThree"
+                    onChange={(e) => handleStorage("skillThree", e.target.value)}
+                    placeholder='Skill 3'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <label>Skill:</label>
+                <input
+                    id="skillFour"
+                    onChange={(e) => handleStorage("skillFour", e.target.value)}
+                    placeholder='Skill 4'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <label>Skill:</label>
+                <input
+                    id="skillFive"
+                    onChange={(e) => handleStorage("skillFive", e.target.value)}
+                    placeholder='Skill 5'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <label>Skill:</label>
+                <input
+                    id="skillSix"
+                    onChange={(e) => handleStorage("skillSix", e.target.value)}
+                    placeholder='Skill 6'
+                    className="bg-gray-400 rounded-2xl px-5 w-100"
+                    type="text"
+                />
+                <button onClick={() => selector('reference')} className='rounded border-dotted bottom-2 mt-5 border-gray-700 rounded-2xl text-gray-800 underline'>next</button>
+            </form>
+        </div>
+    )}
+    {activeSection === 'reference' && (
+        <div>
+            <form className="p-5 pt-27 text-gray-700 rounded-2xl flex flex-col justify-center items-center">
+                <label>Reference:</label>
+                <input
+                    id="referenceOne"
+                    onChange={(e) => handleStorage("referenceOne", e.target.value)}
+                    placeholder='Reference of past work'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <label>Reference:</label>
+                <input
+                    id="referenceTwo"
+                    onChange={(e) => handleStorage("referenceTwo", e.target.value)}
+                    placeholder='Reference of past work'
+                    className="bg-gray-400 px-5 rounded-2xl w-100"
+                    type="text"
+                />
+                <button onClick={() => selector('summary')} className='rounded border-dotted bottom-2 mt-5 border-gray-700 rounded-2xl text-gray-800 underline'>next</button>
+            </form>
+        </div>
+    )}
+    {activeSection === 'summary' && (
+        <div>
+            <form className="p-5 pt-27 text-gray-700 rounded-2xl flex flex-col justify-center items-center">
+                <label>Summary:</label>
+                <input
+                    id="summary"
+                    value={professionalSummary}
+                    onChange={(e) => handleStorage("professionalSummary", e.target.value)}
+                    placeholder='Your work summary,...'
+                    className="px-5 bg-gray-400 rounded-2xl w-100"
+                    type="text"
+                />
+                <Link href="temp" className="decoration-none">
+                    <button className='rounded border-dotted mt-5 bottom-2 border-gray-700 rounded-2xl text-gray-800 underline'>Generate CV now!</button>
+                </Link>
+            </form>
+        </div>
+    )}
+</div>
         </div>
       )}
     </div>
