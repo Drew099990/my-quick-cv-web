@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 const Demos = () => {
   return (
-    <div className="bg-[#b4b2b2] max-md:w-fit min-md:mx-7 space-x-3 max-md:flex-col border-2 border-gray-700 flex justify-center items-start rounded-2xl border-dotted m-4">
+    <div className="bg-[#b4b2b2] shadow-xl max-md:w-fit min-md:mx-7 space-x-3 max-md:flex-col border-2 border-gray-700 flex justify-center items-start rounded-2xl border-dashed m-4">
    <h1 className='m-2 font-bold text-gray-600'>choose template</h1>
    
     <div className="w-[400px] hover:flex-col rounded-2xl hover:scale-105 transition-all duration-150 border-2 border-dotted border-gray-300  flex justify-center items-center  shadow-2xl h-[400px] hover:border-4 hover:border-double hover:bg-gray-600 bg-gray-700 max-md:w-[320px] m-6">

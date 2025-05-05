@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <p className="border-2 z-50 border-dashed relative animate-logo origin-top-left shadow-2xl   from-gray-500 via-[#b4b2b2] to-gray-400 text-4xl border-gray-600 text-gray-800 italic font-bold flex-row flex ml-4 rounded-2xl w-fit p-1.5  bg-[#a4a3a3] " style={{fontFamily:"cursive",}}>my quick cv
+        <p className="border-2 z-50 border-dashed m-4 relative animate-logo origin-top-left shadow-2xl   from-gray-500 via-[#b4b2b2] to-gray-400 text-4xl border-gray-600 text-gray-800 italic font-bold flex-row flex ml-4 rounded-2xl w-fit p-1.5  bg-[#a4a3a3] " style={{fontFamily:"cursive",}}>my quick cv
       <FaEnvelopeCircleCheck className="ml-2 pt-3"></FaEnvelopeCircleCheck></p>
       <h1 className="bg-[#b4b2b2] z-10 relative  max-md:w-[400px] border-2 border-dotted font-semibold italic text-gray-700 border-gray-700 p-3 space-x-3 flex justify-center items-start rounded-2xl m-2">
         
